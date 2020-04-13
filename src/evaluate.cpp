@@ -91,7 +91,7 @@ namespace {
   // MobilityBonus[PieceType-2][attacked] contains bonuses for middle and end game,
   // indexed by piece type and number of attacked squares in the mobility area.
   constexpr Score MobilityBonus[][32] = {
-    { S(-42,-81), S(-36,-56), S(  -4,-30), S( -4,-14), S(  3,  8), S( 13, 15), // Knight
+    { S(-30,-81), S(-27,-56), S(  8,-30), S( -4,-14), S(  3,  8), S( 13, 15), // Knight
       S( 22, 23), S( 28, 27), S( 33, 33) },
     { S(-48,-59), S(-20,-23), S( 16, -3), S( 26, 13), S( 38, 24), S( 51, 42), // Bishop
       S( 55, 54), S( 63, 57), S( 63, 65), S( 68, 73), S( 81, 78), S( 81, 86),
@@ -307,7 +307,7 @@ namespace {
 
             // Penalty if a knight cannot move forwards
             if (Pt == KNIGHT && !(b & mobilityArea[Us] & forward_ranks_bb(Us, s)))
-                score -= make_score(20,0);
+                score -= make_score(32,0);
 
             if (Pt == BISHOP)
             {
